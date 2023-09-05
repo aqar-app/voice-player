@@ -21,7 +21,7 @@ app.use('/play-sound', function (req, res) {
 
     }
     playerInstance = player.play('msg.mp3', function(err){
-        if (err) throw err
+        if (err) console.log(err)
     })
     res.send('ok')
 })

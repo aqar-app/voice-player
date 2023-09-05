@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const player = require('play-sound')(opts = {})
+const player = require('play-sound')(opts = {player: 'aplay'})
 
 const allowCors = (req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*')
@@ -20,7 +20,7 @@ app.use('/play-sound', function (req, res) {
     }catch (e){
 
     }
-    playerInstance = player.play('msg.mp3', function(err){
+    playerInstance = player.play('msg.wav', function(err){
         if (err) console.log(err)
     })
     res.send('ok')
